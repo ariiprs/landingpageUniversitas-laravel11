@@ -4,7 +4,7 @@ use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [FrontController::class, 'showArticlesByCategory'])->name('front.index');
+Route::get('/', [FrontController::class, 'index'])->name('front.index');
 
 Route::get('/categories', function () {
     return view('front.categories');

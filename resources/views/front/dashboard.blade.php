@@ -177,12 +177,12 @@
                                     <span class="text-center text-xs font-bold">{{ $itemArticle->headline }}</span>
                                 </div>
                                 <div class="h-[200px] w-full overflow-hidden rounded-[20px]">
-                                    <img class="h-full w-full object-cover" src="{{ asset ('assets/images/thumbnails/thumbnail-1.jpg') }}" alt="" />
+                                    <img class="h-full w-full object-cover" src="{{ Storage::url($itemArticle->photo) }}" alt="" />
                                 </div>
                             </div>
                             <div class="flex max-h-[81px] w-full flex-col gap-[6px]">
-                                <h2 class="text-balance text-lg font-bold">Bersepeda dapat membuat diri menjadi lebih baik lagi</h2>
-                                <p class="text-sm text-[#A3A6AE]">12 Jun, 2024</p>
+                                <h2 class="text-balance text-lg font-bold">{{ \Illuminate\Support\Str::words($itemArticle->content, 8) }}</h2>
+                                <p class="text-sm text-[#A3A6AE]">{{ $itemArticle->published_at }}</p>
                             </div>
                         </div>
                     </a>
