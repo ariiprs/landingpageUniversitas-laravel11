@@ -21,3 +21,31 @@ var swiper = new Swiper(".swiper-hero", {
       dropdown.classList.add('hidden');
     }
   });
+
+
+
+var swiper = new Swiper(".swiper-hot-news", {
+    direction: "horizontal",
+    loop: false,
+    speed: 700,
+    navigation: {
+        nextEl: ".hot-news-next",
+        prevEl: ".hot-news-prev",
+    },
+    slidesPerView: 3,
+    spaceBetween: 30,
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+    },
+});

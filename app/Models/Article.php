@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,6 +15,7 @@ class Article extends Model
     protected $fillable = [
     'photo',
     'headline',
+    'slug',
     'published_at',
     'content',
     'category_article_id',
@@ -27,4 +29,11 @@ class Article extends Model
     {
         return $this->belongsTo(CategoryArticle::class, 'category_article_id');
     }
+
+    public function setHeadlineAttribute($value)
+    {
+        $this->attributes['headline'] = $value;
+        $this->attributes['slug'] = Str::slug($value);
+    }
+    
 }
