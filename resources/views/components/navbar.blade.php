@@ -4,7 +4,7 @@
             <div class="flex gap-[30px]">
                 <a href="{{ route('front.index') }}">
                     <div class="h-[46px] w-[137px] shrink-0 overflow-hidden">
-                        <img class="h-full w-full object-contain" src="{{asset('assets/images/logos/maga-portal-logo.png') }}" alt="" />
+                        <img class="h-full w-full object-contain" src="{{asset('assets/images/logos/logo.svg') }}" alt="" />
                     </div>
                 </a>
                 <div class="h-12 w-px shrink-0 bg-[#E8EBF4]"></div>
@@ -56,7 +56,7 @@
                 <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 absolute">
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                     <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sejarah</a>
+                        <a href="{{ route ('front.facilities') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Facility</a>
                     </li>
                     <li>
                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visi Misi</a>
@@ -65,14 +65,14 @@
                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sambutan Rektor</a>
                     </li>
                     <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fasilitas</a>
+                        <a href="{{ route ('front.histories') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sejarah</a>
                     </li>
                     </ul>
                 </div>
 
             </div>
 
-            <a href="{{ route('front.details') }}">
+            <a href="#">
                 <div class="flex gap-[10px] rounded-full px-[22px] py-3 ring-1 ring-[#E8EBF4] transition-all duration-300 hover:ring-2 hover:ring-maga-orange">
                     <div class="h-6 w-6 shrink-0 overflow-hidden">
                         <img class="h-full w-full object-contain" src="{{asset('assets/images/icons/car-black.svg') }}" alt="" />
@@ -80,12 +80,12 @@
                     <p class="text-center font-semibold">SDM</p>
                 </div>
             </a>
-            <a href="{{ route('front.search') }}">
+            <a href="{{ route('front.all_news') }}">
                 <div class="flex gap-[10px] rounded-full px-[22px] py-3 ring-1 ring-[#E8EBF4] transition-all duration-300 hover:ring-2 hover:ring-maga-orange">
                     <div class="h-6 w-6 shrink-0 overflow-hidden">
                         <img class="h-full w-full object-contain" src="{{asset('assets/images/icons/global-black.svg') }}" alt="" />
                     </div>
-                    <p class="text-center font-semibold">Search</p>
+                    <p class="text-center font-semibold">Pengumuman</p>
                 </div>
             </a>
             <a href="">

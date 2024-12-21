@@ -35,11 +35,12 @@ class FrontService
     {
         $categoriesArticle = $this->categoryArticleRepository->getAllCategoryArticles();
         $articles = $this->articleRepository->getAllArticles(1);
+        $announcements = $this->articleRepository->getAllArticles(3);
         $footers = $this->footerRepository->getAllFooters();
         $footer = $footers->first(); // Ambil item pertama dari koleksi footers
 
 
-        return compact('categoriesArticle', 'footer', 'articles');
+        return compact('categoriesArticle', 'footer', 'articles', 'announcements');
     }
 
     public function getHistoryPageData()
@@ -55,4 +56,5 @@ class FrontService
 
         return compact('facilities');
     }
+    
 }
