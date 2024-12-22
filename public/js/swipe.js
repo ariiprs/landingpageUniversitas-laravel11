@@ -49,3 +49,28 @@ var swiper = new Swiper(".swiper-hot-news", {
         },
     },
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var successMessageElement = document.getElementById("success-message");
+    if (successMessageElement) {
+        var message = successMessageElement.getAttribute("data-message");
+        Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: message,
+        });
+    }
+});
+
+
+ function updateFileName() {
+     var input = document.getElementById("photo");
+     var label = document.getElementById("photo-label");
+     var fileName = document.getElementById("photo-filename");
+
+     if (input.files && input.files.length > 0) {
+         fileName.textContent = input.files[0].name;
+         label.classList.add("bg-gray-200"); // Mengubah background menjadi abu-abu
+     }
+ }
+

@@ -1,4 +1,3 @@
-{{-- <div class="flex flex-col gap-[30px]"> --}}
 
     <nav class="mx-auto mt-[30px] flex max-h-12 w-full max-w-[1130px] items-center justify-between">
             <div class="flex gap-[30px]">
@@ -28,12 +27,12 @@
                         <p class="w-full text-nowrap text-center text-base font-semibold">Upgrade Pro</p>
                     </div>
                 </a>
-                <a href="#">
-                    <div class="flex max-w-[149px] gap-[10px] rounded-full bg-maga-orange px-[22px] py-3">
+                <a href="{{ route ('front.register') }}">
+                    <div class="flex max-w-[175px] gap-[10px] rounded-full bg-maga-orange px-[22px] py-3 hover:ring-2 hover:ring-black hover:bg-opacity-80 transition-all duration-300">
                         <div class="h-6 w-6 shrink-0 overflow-hidden">
-                            <img class="h-full w-full object-contain" src="{{asset('assets/images/icons/favorite-chart-white.svg') }}" alt="" />
+                            <img class="h-full w-full object-contain" src="{{ asset('assets/images/icons/favorite-chart-white.svg') }}" alt="" />
                         </div>
-                        <p class="w-full text-center text-base font-bold text-white">Post Ads</p>
+                        <p class="w-full text-center text-base font-bold text-white">Pendaftaran</p>
                     </div>
                 </a>
             </div>

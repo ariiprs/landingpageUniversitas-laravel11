@@ -48,4 +48,9 @@ class FrontController extends Controller
         return view('front.facility', $data);
     }
 
+    public function register()
+    {
+        return view('register.register');
+    }
+
 }
