@@ -50,7 +50,25 @@ class FrontController extends Controller
 
     public function register()
     {
+        
         return view('register.register');
+    }
+
+    public function lecturer()
+    {
+        $data = $this->frontService->getLecturerPageData();
+        return view('front.lecturers', $data);
+    }
+    public function greeting()
+    {
+        $data = $this->frontService->getGreetingsPageData();
+        return view('front.greetings', $data);
+    }
+
+    public function vissionMission()
+    {
+        $data = $this->frontService->getVissionMissionPageData();
+        return view('front.vissionmission', $data);
     }
 
 }

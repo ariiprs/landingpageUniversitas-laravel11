@@ -9,7 +9,13 @@ Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/details/{article:slug}', [FrontController::class, 'detailsNews'])->name('front.details_news');
 Route::get('/all-news', [FrontController::class, 'allNews'])->name('front.all_news');
 
+Route::get('/lecturers', [FrontController::class, 'lecturer'])->name('front.lecturers');
+
+Route::get('/greetings', [FrontController::class, 'greeting'])->name('front.greetings');
+
 Route::get('/facilities', [FrontController::class, 'facility'])->name('front.facilities');
+
+Route::get('/vission-mission', [FrontController::class, 'vissionMission'])->name('front.vissionmission');
 
 Route::get('/histories', [FrontController::class, 'history'])->name('front.histories');
 

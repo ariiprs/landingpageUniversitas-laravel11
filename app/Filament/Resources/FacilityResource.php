@@ -7,6 +7,7 @@ use App\Filament\Resources\FacilityResource\RelationManagers;
 use App\Models\Facility;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -33,7 +34,7 @@ class FacilityResource extends Resource
                 FileUpload::make('image')
                 ->nullable(),
 
-                Textarea::make('content')
+                RichEditor::make('content')
                 ->required(),
             ]);
     }
@@ -44,8 +45,7 @@ class FacilityResource extends Resource
             ->columns([
                 ImageColumn::make('image')
                 ->circular(),
-                    // ->limit(50) // Limit the content to 50 characters
-                    // ->wrap(), // Wrap the content to make words go down
+                    TextColumn::make('content')->html()->wrap(),
             ])
             ->filters([
                 //

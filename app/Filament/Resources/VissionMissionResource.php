@@ -48,8 +48,8 @@ class VissionMissionResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('visi')->html(),
-                TextColumn::make('misi')->html(),
+                TextColumn::make('visi')->html()->wrap(),
+                TextColumn::make('misi')->html()->wrap(),
                 ImageColumn::make('photos.photo')
                     ->label('Photos')
                     ->circular(),

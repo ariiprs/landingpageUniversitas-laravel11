@@ -94,7 +94,6 @@
                 </a>
             @endforelse
         </div>
-
     </section>
 
     <section id="hot-news" class="mx-auto mt-[70px] flex max-h-[550px] max-w-[1130px] flex-col items-center gap-[30px]">
@@ -175,7 +174,7 @@
             @forelse ($rectorat as $item)
                 <a href="">
                     <div
-                        class="flex max-h-[350px] max-w-[200px] flex-col items-center gap-4 rounded-[20px] px-[27px] py-[26px] ring-1 ring-[#E8EBF4] transition-all duration-300 hover:ring-2 hover:ring-maga-orange">
+                        class="flex max-h-[350px] max-w-[200px]  flex-col items-center gap-4 rounded-[20px] px-[27px] py-[26px] ring-1 ring-[#E8EBF4] transition-all duration-300 hover:ring-2 hover:ring-maga-orange">
                         <div class="h-[70px] w-[70px] shrink-0 overflow-hidden rounded-full">
                             <img class="h-full w-full object-cover" src="{{ Storage::url($item->photo) }}"
                                 alt="" />

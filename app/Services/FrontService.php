@@ -87,17 +87,17 @@ class FrontService
 
     public function getLecturerPageData()
     {
-        $lecturers = $this->lecturerRepository->getAllLecturers(1);
-        $staff = $this->lecturerRepository->getAllLecturers(2);
+        $lecturers = $this->lecturerRepository->getAllLecturers(2);
+        $staff = $this->lecturerRepository->getAllLecturers(3);
 
         return compact('lecturers', 'staff');
     }
 
     public function getGreetingsPageData()
     {
-        $greeeting = $this->greetingRepository->getAllGreeting();
+        $greeting = $this->greetingRepository->getAllGreeting();
 
-        return compact('greeeting');
+        return compact('greeting');
     }
 
     public function getVissionMissionPageData()

@@ -46,12 +46,11 @@
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Facility</a>
                     </li>
                     <li>
-                        <a href="#"
-                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visi & Misi
-                            Misi</a>
+                        <a href="{{ route('front.vissionmission') }}"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visi & Misi</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="{{ route('front.greetings') }}"
                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sambutan
                             Rektor</a>
                     </li>
@@ -63,7 +62,7 @@
             </div>
         </div>
 
-        <a href="#">
+        <a href="{{ route('front.lecturers') }}">
             <div
                 class="flex gap-[10px] rounded-full px-[22px] py-3 ring-1 ring-[#E8EBF4] transition-all duration-300 hover:ring-2 hover:ring-maga-orange">
                 {{-- <div class="h-6 w-6 shrink-0 overflow-hidden">
@@ -83,16 +82,16 @@
                 <p class="text-center font-semibold">Pengumuman</p>
             </div>
         </a>
-        <a href="">
+        {{-- <a href="">
             <div
                 class="flex gap-[10px] rounded-full px-[22px] py-3 ring-1 ring-[#E8EBF4] transition-all duration-300 hover:ring-2 hover:ring-maga-orange">
-                {{-- <div class="h-6 w-6 shrink-0 overflow-hidden">
+                <div class="h-6 w-6 shrink-0 overflow-hidden">
                     <img class="h-full w-full object-contain" src="{{ asset('assets/images/icons/coffee-black.svg') }}"
                         alt="" />
-                </div> --}}
+                </div>
                 <p class="text-center font-semibold">Foods</p>
             </div>
-        </a>
+        </a> --}}
         <a href="{{ route('front.register') }}">
             <div
                 class="flex max-w-[175px] gap-[10px] rounded-full bg-maga-orange px-[22px] py-3 hover:ring-2 hover:ring-black hover:bg-opacity-80 transition-all duration-300">

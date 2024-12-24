@@ -28,7 +28,7 @@ class GreetingResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->image()
                     ->required(),
-                Forms\Components\Textarea::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->required(),
             ]);
     }
@@ -39,7 +39,7 @@ class GreetingResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->circular(),
-                Tables\Columns\TextColumn::make('content'),
+                Tables\Columns\TextColumn::make('content')->html()->wrap(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable(),
