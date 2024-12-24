@@ -2,13 +2,12 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\AboutUsResource\Pages;
-use App\Filament\Resources\AboutUsResource\RelationManagers;
-use App\Models\AboutUs;
+use App\Filament\Resources\SliderItemResource\Pages;
+use App\Filament\Resources\SliderItemResource\RelationManagers;
+use App\Models\SliderItem;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -18,14 +17,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AboutUsResource extends Resource
+class SliderItemResource extends Resource
 {
-    protected static ?string $model = AboutUs::class;
-
-    public static function getLabel(): string
-    {
-        return 'About Us'; // Set the label as "About Us"
-    }
+    protected static ?string $model = SliderItem::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-information-circle';
 
@@ -35,14 +29,9 @@ class AboutUsResource extends Resource
     {
         return $form
             ->schema([
-                Textarea::make('content')
-                    ->required(),
-                Repeater::make('photos')
-                    ->relationship('photos')
-                    ->schema([
-                        FileUpload::make('photo')
-                            ->required()
-                    ])->maxItems(3),
+                TextInput::make('title')->required(),
+                TextInput::make('subtitle')->required(),
+                FileUpload::make('photo')->required(),
             ]);
     }
 
@@ -50,18 +39,17 @@ class AboutUsResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('photos.photo')
-                    ->label('Photos')
-                    ->circular(),
-                TextColumn::make('content')
-                ->words(5),
+                TextColumn::make('title'),
+                TextColumn::make('subtitle'),
+                ImageColumn::make('photo')->circular(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -80,14 +68,9 @@ class AboutUsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAboutUs::route('/'),
-            'create' => Pages\CreateAboutUs::route('/create'),
-            'edit' => Pages\EditAboutUs::route('/{record}/edit'),
+            'index' => Pages\ListSliderItems::route('/'),
+            'create' => Pages\CreateSliderItem::route('/create'),
+            'edit' => Pages\EditSliderItem::route('/{record}/edit'),
         ];
-    }
-
-    public static function canCreate(): bool
-    {
-        return AboutUs::count() < 1;
     }
 }

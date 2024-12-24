@@ -19,6 +19,7 @@ class GreetingResource extends Resource
     protected static ?string $model = Greeting::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-hand-raised';
+    protected static ?string $navigationGroup = 'Additional Article';
 
     public static function form(Form $form): Form
     {

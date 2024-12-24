@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturers', function (Blueprint $table) {
+        Schema::create('slider_items', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_induk')->nullable();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('title');
+            $table->string('subtitle');
             $table->string('photo');
-            $table->string('education')->nullable();
-            $table->string('position');
-            $table->string('topic')->nullable();
-            $table->foreignId('category_lecturer_id')->constrained()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lecturers');
+        Schema::dropIfExists('slider_items');
     }
 };

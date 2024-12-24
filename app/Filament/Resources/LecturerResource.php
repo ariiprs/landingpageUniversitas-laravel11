@@ -23,6 +23,7 @@ class LecturerResource extends Resource
     protected static ?string $model = Lecturer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+    protected static ?string $navigationGroup = 'Staff';
 
     public static function form(Form $form): Form
     {
@@ -34,8 +35,7 @@ class LecturerResource extends Resource
                 FileUpload::make('photo')
                     ->image()
                     ->required(),
-                TextInput::make('education')
-                    ->required(),
+                TextInput::make('education'),
                 TextInput::make('position')
                     ->required(),
                 TextInput::make('topic'),

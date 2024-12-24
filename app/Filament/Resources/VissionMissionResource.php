@@ -25,6 +25,8 @@ class VissionMissionResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-arrow-trending-up';
 
+    protected static ?string $navigationGroup = 'Additional Article';
+
     public static function form(Form $form): Form
     {
         return $form

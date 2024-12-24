@@ -23,6 +23,7 @@ class RegistrationResource extends Resource
     protected static ?string $model = Registration::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
+    protected static ?string $navigationGroup = 'Admission';
 
     public static function form(Form $form): Form
     {

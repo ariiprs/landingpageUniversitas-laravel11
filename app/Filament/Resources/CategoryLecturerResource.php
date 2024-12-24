@@ -18,6 +18,7 @@ class CategoryLecturerResource extends Resource
     protected static ?string $model = CategoryLecturer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationGroup = 'Staff';
 
     public static function form(Form $form): Form
     {
